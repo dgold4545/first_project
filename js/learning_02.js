@@ -13,10 +13,31 @@ const personalMovieDB = {
   genres: [],
   privat: false,
 };
+
 let lastWathedFilm;
-// let lastWathedFilm = prompt('Один из последних просмотренных фильмов?', '');
+while (!lastWathedFilm || lastWathedFilm.length > 50) {
+  lastWathedFilm = prompt('Один из последних просмотренных фильмов?', '');
+}
+
+let whatTheSkore;
+while (!whatTheSkore || whatTheSkore.length > 50) {
+  whatTheSkore = prompt('На сколько оцените его?', '');
+}
+
+let lastWathedFilmTwo;
+while (!lastWathedFilmTwo || lastWathedFilmTwo.length > 50) {
+  lastWathedFilmTwo = prompt('Один из последних просмотренных фильмов?', '');
+}
+
+let whatTheSkoreWTho;
+while (!whatTheSkoreWTho || whatTheSkoreWTho.length > 50) {
+  whatTheSkoreWTho = prompt('На сколько оцените его?', '');
+}
+
 // let whatTheSkore = prompt('На сколько оцените его?', '');
+
 // let lastWathedFilmTwo = prompt('Один из последних просмотренных фильмов?', '');
+
 // let whatTheSkoreWTho = prompt('На сколько оцените его?', '');
 
 // while (!lastWathedFilm || lastWathedFilm.length >= 50) {
