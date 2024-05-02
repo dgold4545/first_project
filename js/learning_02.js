@@ -13,7 +13,7 @@ const personalMovieDB = {
   genres: [],
   privat: false,
 };
-
+let lastWathedFilm;
 // let lastWathedFilm = prompt('Один из последних просмотренных фильмов?', '');
 // let whatTheSkore = prompt('На сколько оцените его?', '');
 // let lastWathedFilmTwo = prompt('Один из последних просмотренных фильмов?', '');
