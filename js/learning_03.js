@@ -2,9 +2,21 @@
 
 let numberOfFilms;
 
-while (!numberOfFilms || numberOfFilms.length > 50) {
-  numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', '');
+// while (!numberOfFilms || numberOfFilms.length > 50) {
+//   numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', '');
+// }
+
+function start() {
+  while (
+    !numberOfFilms ||
+    Number.isNaN(numberOfFilms) ||
+    numberOfFilms.length > 50
+  ) {
+    numberOfFilms = Number(prompt('Сколько фильмов вы уже посмотрели?', ''));
+  }
 }
+
+start();
 
 const personalMovieDB = {
   count: numberOfFilms,
@@ -14,73 +26,82 @@ const personalMovieDB = {
   privat: false,
 };
 
-let lastWathedFilm;
-while (!lastWathedFilm || lastWathedFilm.length > 50) {
-  lastWathedFilm = prompt('Один из последних просмотренных фильмов?', '');
-}
+// function rememberMyFilms() {
+//   let i = 3;
 
-let whatTheSkore;
-while (!whatTheSkore || whatTheSkore.length > 50) {
-  whatTheSkore = prompt('На сколько оцените его?', '');
-}
+//   do {
+//     let lastWathedFilm;
 
-let lastWathedFilmTwo;
-while (!lastWathedFilmTwo || lastWathedFilmTwo.length > 50) {
-  lastWathedFilmTwo = prompt('Один из последних просмотренных фильмов?', '');
-}
+//     while (!lastWathedFilm || lastWathedFilm.length > 50) {
+//       lastWathedFilm = prompt('Один из последних просмотренных фильмов?', '');
 
-let whatTheSkoreWTho;
-while (!whatTheSkoreWTho || whatTheSkoreWTho.length > 50) {
-  whatTheSkoreWTho = prompt('На сколько оцените его?', '');
-}
+//       let scoreStars;
 
-personalMovieDB[lastWathedFilm] = whatTheSkore;
-personalMovieDB[lastWathedFilmTwo] = whatTheSkoreWTho;
+//       while (!scoreStars || scoreStars.length > 50) {
+//         scoreStars = Number(prompt('На сколько оцените его?', ''));
+//       }
 
-if (personalMovieDB.count < 10) {
-  alert('Просмотрено довольно мало фильмов');
-} else if (personalMovieDB.count > 10 && personalMovieDB.count < 30) {
-  alert('Вы классический зритель');
-} else if (personalMovieDB.count > 30) {
-  alert('Вы киноман');
-} else {
-  alert('Произошла ошибка');
-}
+//       personalMovieDB.movies[lastWathedFilm] = scoreStars;
+//     }
+//     i--;
+//   } while (i ===1);
+// }
 
-console.log(numberOfFilms);
+function rememberMyFilms() {
+  for (let i = 0; i < 2; i += 1) {
+    let lastWathedFilm;
+    let scoreStars;
 
-console.log(personalMovieDB);
+    while (!lastWathedFilm || lastWathedFilm.length > 50) {
+      lastWathedFilm = prompt('Один из последних просмотренных фильмов?', '');
+    }
 
-function sayHello(name) {
-  return `Привет, ${name}!`;
-}
+    while (!scoreStars || scoreStars.length > 50) {
+      scoreStars = Number(prompt('На сколько оцените его?', ''));
+    }
 
-function returnNeighboringNumbers(number) {
-  return [number - 1, number, number + 1];
-}
-
-returnNeighboringNumbers(18);
-
-function sayHello(userName) {
-  return 'Привет,' + userName + '!';
-}
-console.log(sayHello('aynjh'));
-
-function getMathResult(num1, num2) {
-  const numberOne = num1;
-  const numberTwo = num2;
-
-  if (typeof numberTwo !== 'number' || numberTwo <= 0) {
-    return numberOne;
+    personalMovieDB.movies[lastWathedFilm] = scoreStars;
   }
+}
+rememberMyFilms();
 
-  let result = [];
 
-  for (let i = 0; i < numberTwo; i += 1) {
-    result.push(numberOne * (i + 1));
+
+const detectPersonalLevel = () => {
+  if (personalMovieDB.count < 10) {
+    alert('Просмотрено довольно мало фильмов');
+  } else if (personalMovieDB.count > 10 && personalMovieDB.count < 30) {
+    alert('Вы классический зритель');
+  } else if (personalMovieDB.count > 30) {
+    alert('Вы киноман');
+  } else {
+    alert('Произошла ошибка');
   }
+};
 
-  return result.join('---');
+detectPersonalLevel();
+
+
+
+const showMyDB = () => {
+  
 }
 
-console.log(getMathResult(10, 5));
+
+
+
+
+
+
+
+
+
+
+
+
+const showLog = () => {
+  console.log(numberOfFilms);
+console.log(personalMovieDB)
+}
+
+showLog();
