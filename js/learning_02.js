@@ -34,28 +34,20 @@ while (!whatTheSkoreWTho || whatTheSkoreWTho.length > 50) {
   whatTheSkoreWTho = prompt('На сколько оцените его?', '');
 }
 
-// let whatTheSkore = prompt('На сколько оцените его?', '');
+personalMovieDB[lastWathedFilm] = whatTheSkore;
+personalMovieDB[lastWathedFilmTwo] = whatTheSkoreWTho;
 
-// let lastWathedFilmTwo = prompt('Один из последних просмотренных фильмов?', '');
-
-// let whatTheSkoreWTho = prompt('На сколько оцените его?', '');
-
-// while (!lastWathedFilm || lastWathedFilm.length >= 50) {
-//   lastWathedFilm = prompt('Сколько фильмов вы уже посмотрели?', '');
-// }
-// while (!whatTheSkore || whatTheSkore.length >= 50) {
-//   whatTheSkore = prompt('Сколько фильмов вы уже посмотрели?', '');
-// }
-// while (!lastWathedFilmTwo || lastWathedFilmTwo.length >= 50) {
-//   lastWathedFilmTwo = prompt('Сколько фильмов вы уже посмотрели?', '');
-// }
-// while (!whatTheSkoreWTho || whatTheSkoreWTho.length >= 50) {
-//   whatTheSkoreWTho = prompt('Сколько фильмов вы уже посмотрели?', '');
-// }
-
-// personalMovieDB[lastWathedFilm] = whatTheSkore;
-// personalMovieDB[lastWathedFilmTwo] = whatTheSkoreWTho;
-
-console.log(numberOfFilms);
+if (personalMovieDB.count < 10) {
+  alert('Просмотрено довольно мало фильмов');
+} else if (personalMovieDB.count > 10 && personalMovieDB.count < 30) {
+  alert('Вы классический зритель');
+} else if (personalMovieDB.count > 30) {
+  alert('Вы киноман');
+} else {
+  alert('Произошла ошибка');
+}
+  
+  
+  console.log(numberOfFilms);
 
 console.log(personalMovieDB);
