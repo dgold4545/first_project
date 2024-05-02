@@ -58,22 +58,17 @@ function sayHello(name) {
   return `Привет, ${name}!`;
 }
 
-
 function returnNeighboringNumbers(number) {
   return [number - 1, number, number + 1]
 }
 
-
 returnNeighboringNumbers(18);
-
 
  function sayHello(userName) {
    return ('Привет,' + userName + '!');
  }
 console.log(sayHello('aynjh'));
  
-
-
 
 function getMathResult(num1,num2) {
   const numberOne = num1;
