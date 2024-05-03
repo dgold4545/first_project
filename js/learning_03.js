@@ -28,7 +28,7 @@ function rememberMyFilms() {
     let scoreStars;
 
     while (!lastWathedFilm || lastWathedFilm.length > 50) {
-      lastWathedFilm = prompt('Один из последних просмотренных фильмов?', '');
+      lastWathedFilm = prompt('Один из последних просмотренных фильмов?', '').trim();
     }
 
     while (!scoreStars || scoreStars.length > 50) {
